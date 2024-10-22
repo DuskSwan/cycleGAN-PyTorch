@@ -12,6 +12,7 @@ This code is inspired by the actual implementation by [junyanz](https://github.c
 ```
 $ sh ./download_dataset.sh horse2zebra
 ```
+> download link: https://efrosgans.eecs.berkeley.edu/cyclegan/datasets/
 * To run training
 ```
 $ python main.py --training True
