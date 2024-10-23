@@ -187,6 +187,7 @@ class cycleGAN(object):
 
             # Override the latest checkpoint
             #######################################################
+            # model_save_path = '{}/latest_{}.ckpt'.format(args.checkpoint_dir, os.path.basename(args.dataset_dir))
             utils.save_checkpoint({'epoch': epoch + 1,
                                    'Da': self.Da.state_dict(),
                                    'Db': self.Db.state_dict(),

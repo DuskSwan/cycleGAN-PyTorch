@@ -36,6 +36,8 @@ def test(args):
     utils.print_networks([Gab,Gba], ['Gab','Gba'])
 
     try:
+        # model_save_path = '{}/latest_{}.ckpt'.format(args.checkpoint_dir, os.path.basename(args.dataset_dir))
+        # ckpt = utils.load_checkpoint(model_save_path)
         ckpt = utils.load_checkpoint('%s/latest.ckpt' % (args.checkpoint_dir))
         Gab.load_state_dict(ckpt['Gab'])
         Gba.load_state_dict(ckpt['Gba'])
@@ -44,8 +46,8 @@ def test(args):
 
 
     """ run """
-    a_real_test = Variable(iter(a_test_loader).next()[0], requires_grad=True)
-    b_real_test = Variable(iter(b_test_loader).next()[0], requires_grad=True)
+    a_real_test = Variable(next(iter(a_test_loader))[0], requires_grad=True)
+    b_real_test = Variable(next(iter(b_test_loader))[0], requires_grad=True)
     a_real_test, b_real_test = utils.cuda([a_real_test, b_real_test])
             
 
@@ -63,5 +65,7 @@ def test(args):
     if not os.path.isdir(args.results_dir):
         os.makedirs(args.results_dir)
 
-    torchvision.utils.save_image(pic, args.results_dir+'/sample.jpg', nrow=3)
+    dataset_name = os.path.basename(args.dataset_dir)
+    test_result_save_path = args.results_dir+'/result_{}.jpg'.format(dataset_name)
+    torchvision.utils.save_image(pic, test_result_save_path, nrow=3)
 

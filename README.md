@@ -5,7 +5,8 @@ All the credit goes to the authors of the paper.
 This code is inspired by the actual implementation by [junyanz](https://github.com/junyanz) which can be found [here](https://github.com/junyanz/pytorch-CycleGAN-and-pix2pix).
 
 ## Requirements
-- The code has been written in Python (3.5.2) and PyTorch (0.4.1)
+- (origin author) The code has been written in Python (3.5.2) and PyTorch (0.4.1)
+- Now I change the code to Python 3.10 and PyTorch 2.2.0, torchvision 0.17
 
 ## How to run
 * To download datasets (eg. horse2zebra)

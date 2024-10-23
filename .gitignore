@@ -3,3 +3,7 @@ datasets/horse2zebra/
 # Ignore Python cache files
 **/__pycache__/
 *.py[cod]
+
+# Ignore test result
+checkpoints/
+results/
